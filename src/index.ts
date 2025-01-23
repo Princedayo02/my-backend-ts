@@ -1,8 +1,13 @@
 import express, { Express, Response, Request } from "express";
 import router from "./routes";
+import sequelize from "./database/connection";
 
 const app: Express = express();
 const port = 4000;
+sequelize
+	.sync({ force: false })
+	.then(() => console.log("Database CONNECTED"))
+	.catch((err) => console.log(err));
 
 app.use(express.json());
 app.use("/ts", router);

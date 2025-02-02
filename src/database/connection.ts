@@ -3,7 +3,7 @@ import { join } from "path";
 const sequelize = new Sequelize({
 	dialect: "postgres",
 	host: "localhost",
-	port: 5432,
+	port: 5431,
 	username: "postgres",
 	password: "root",
 	database: "book_catalog",

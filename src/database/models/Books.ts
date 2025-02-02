@@ -12,6 +12,9 @@ class Book extends Model {
 	@Column({ type: DataType.DATE, allowNull: true })
 	declare year: string;
 
+	@Column({ type: DataType.STRING })
+	declare name: string;
+
 	@Column({ type: DataType.BOOLEAN })
 	declare proofRead: boolean;
 
@@ -19,10 +22,10 @@ class Book extends Model {
 	declare isbn: string;
 
 	@BelongsTo(() => Author, "authorId")
-	declare author: number;
+	declare author: string;
 
 	@BelongsTo(() => Genre, "genreId")
-	declare genred: number;
+	declare genre: string;
 }
 
 export default Book;

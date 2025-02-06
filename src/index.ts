@@ -6,7 +6,7 @@ import CORS from "cors";
 const app: Express = express();
 const port = 4000;
 sequelize
-	.sync({ force: true })
+	.sync({ force: false })
 	.then(() => console.log("Database CONNECTED"))
 	.catch((err) => console.log(err));
 

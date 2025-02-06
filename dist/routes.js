@@ -1,0 +1,26 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const userController_1 = require("./controller/userController");
+const bookController_1 = require("./controller/bookController");
+const router = express_1.default.Router();
+router.get("/book/:id", bookController_1.getBook);
+router.get("/book", bookController_1.getBooks);
+router.post("/book", bookController_1.addBook);
+router.put("/book", bookController_1.putBooks);
+router.delete("/book", bookController_1.deleteBook);
+router.get("/user", userController_1.getUsers);
+router.post("/user", userController_1.addUser);
+router.delete("/user", userController_1.deleteUser);
+router.get("/user", userController_1.getUserbyId);
+router.post("/genre", bookController_1.addGenre);
+router.get("/genre", bookController_1.getGenre);
+router.put("/genre", bookController_1.editGenre);
+router.post("/author", bookController_1.addAuthor);
+router.get("/author", bookController_1.getAuthor);
+router.put("/author", bookController_1.editAuthor);
+router.delete("/author", bookController_1.deleteAuthor);
+exports.default = router;

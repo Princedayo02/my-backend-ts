@@ -14,6 +14,7 @@ const sequelize = new Sequelize({
 	database: process.env.DB_DATABASE || "",
 	models: [join(__dirname, "models")],
 	logging: false,
+	ssl: process.env.NODE_ENV == "production" ? true : false,
 });
 
 export default sequelize;
